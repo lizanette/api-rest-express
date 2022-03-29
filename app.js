@@ -1,6 +1,6 @@
 const inicioDebug = require('debug')('app:inicio');
 const dbDebug = require('debug')('app:db');
-const usuarios = require("./routes/usuarios"); // Importa el archivo con las rutas para los usuarios
+const usuarios = require("./routes/usuarios.js"); // Importa el archivo con las rutas para los usuarios
 const express = require('express'); // importa express
 const config = require('config');
 const app = express(); // Crea una instancia de express
@@ -98,14 +98,3 @@ app.listen(port, () => {
 });
 
 // Se creó una variable de entorno con SETX PORT 5000, desde la terminal
-
-function existeUsuario(id) {
-    return (usuarios.find(u => u.id === parseInt(id)));
-}
-
-function validarUsuario(nomb) {
-    const schema = Joi.object({
-        nombre:Joi.string().min(3).required()
-    });
-    return (schema.validate({nombre:nomb}));
-}
