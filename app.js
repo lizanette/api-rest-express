@@ -48,7 +48,7 @@ app.use(express.json()); // Se le dice a express que use este middleware
 app.use(express.urlencoded({extended: true}));
 // public es el nombre de la carpeta que tendrá los recursos estáticos
 app.use(express.static('public'));
-app.use("api/usuarios", usuarios);
+app.use('api/usuarios', usuarios);
 
 // con SETX NODE_ENV production o SETX NODE_ENV development, se va cambiando de entorno
 
@@ -80,11 +80,11 @@ app.use(function(req, res, next) {
 // app.put();  // Actualiza datos
 // app.delete();   // Elimina datos
 
-// Consulta en la ruta raíz de nuestro servidor
-// con una función callback
-app.get('/', (req, res) => {
-    res.send("Hola mundo desde Express");
-});
+// // Consulta en la ruta raíz de nuestro servidor
+// // con una función callback
+// app.get('/', (req, res) => {
+//     res.send("Hola mundo desde Express");
+// });
 
 
 // Usando el módulo process, se lee una variable
