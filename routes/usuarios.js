@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const Joi = require('joi'); // importa Joi
 const ruta = express.Router();
 

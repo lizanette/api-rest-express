@@ -7,7 +7,6 @@ const app = express(); // Crea una instancia de express
 const logger = require('./logger');
 const morgan = require('morgan');
 
-const express = require("express");
 
 // Middleware
 // El middleware es un bloque de código que se ejecuta
