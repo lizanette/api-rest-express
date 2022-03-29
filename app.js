@@ -3,10 +3,10 @@ const dbDebug = require('debug')('app:db');
 const usuarios = require("./routes/usuarios"); // Importa el archivo con las rutas para los usuarios
 const express = require('express'); // importa express
 const config = require('config');
-const app = express(); // Crea una instancia de express
 const logger = require('./logger');
 const morgan = require('morgan');
 
+const app = express(); // Crea una instancia de express
 
 // Middleware
 // El middleware es un bloque de código que se ejecuta
@@ -49,7 +49,7 @@ app.use(express.json()); // Se le dice a express que use este middleware
 app.use(express.urlencoded({extended: true}));
 // public es el nombre de la carpeta que tendrá los recursos estáticos
 app.use(express.static('public'));
-app.use('api/usuarios', usuarios);
+app.use('/api/usuarios', usuarios);
 
 // con SETX NODE_ENV production o SETX NODE_ENV development, se va cambiando de entorno
 
@@ -83,9 +83,9 @@ app.use(function(req, res, next) {
 
 // // Consulta en la ruta raíz de nuestro servidor
 // // con una función callback
-// app.get('/', (req, res) => {
-//     res.send("Hola mundo desde Express");
-// });
+app.get('/', (req, res) => {
+    res.send("Hola mundo desde Express");
+});
 
 
 // Usando el módulo process, se lee una variable
